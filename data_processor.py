@@ -200,7 +200,14 @@ class DataProcessor:
                     # return DataProcessor.split_word(left_part, lexicon) +['小隔'] + [right_part]
 
             # 保底处理：单字拆分（过滤无效字符）
-            return [c for c in word if '\u4e00' <= c <= '\u9fff']
+            clist = []
+            for c in word:
+                if '\u4e00' <= c <= '\u9fff':
+                    clist.append(c)
+                    if not c == word[-1]:
+                        clist.append('小隔')
+
+            return clist
 
         except Exception as e:
             logging.error(f"分词异常 | 输入：{word} | 错误：{str(e)}")

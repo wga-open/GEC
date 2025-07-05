@@ -27,9 +27,9 @@ executables = [
 ]
 
 setup(
-    name="MyApp",
+    name="WGA",
     version="1.0",
-    description="My Application Description",
+    description="World-Graphic-Alphabet-WGA",
     options={"build_exe": build_options},
     executables=executables
 )

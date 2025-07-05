@@ -12,7 +12,7 @@ from hashlib import md5
 
 # Set your own appid/appkey.
 appid = '20220622001254827'
-appkey = 'MAYWJUWNQS3NAngfW80a'
+appkey = 'MAYwJuwNQs3NAnqfW80a'
 
 # For list of language codes, please refer to `https://api.fanyi.baidu.com/doc/21`
 def createRequest(query,from_lang,to_lang,):
