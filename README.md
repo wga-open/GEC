@@ -28,7 +28,7 @@ Unlike language pronunciation, WGA shape don't restrict each other. So anyone's 
 
 ## Core Advantage 2: Simple and Efficient 
 Semantic decomposition makes WGAs concise, universal, abstract, and unambiguous.
-﻿1. Precise expression
+1. Precise expression
 Example: "舅舅"  as "uncle" is imprecise; "Brother + Mother" is exact.
 2. Easy to understand
 even for unfamiliar words, you can understand their categories and main characteristics via WGAs combinations.

@@ -19,9 +19,9 @@ executables = [
     Executable(
         "main.py",
         base=base,
-        target_name="MyApp",
+        target_name="WGA",
         copyright="Copyright (C) 2023 My Company",
-        shortcut_name="My Application",
+        shortcut_name="World-Graphic-Alphabet-WGA",
         shortcut_dir="DesktopFolder"
     )
 ]

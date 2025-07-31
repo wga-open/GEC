@@ -148,7 +148,7 @@ class DataProcessor:
     @staticmethod
     def _select_best_candidate(candidates: List[Dict]) -> Dict:
         """按NUM字段选择最优候选词条"""
-        return min(candidates, key=lambda x: x.get('num', 9999))
+        return min(candidates, key=lambda x: float(x.get('num', 99999)))
 
     @staticmethod
     def split_word(word: str, lexicon: Dict) -> List[str]:
@@ -182,13 +182,50 @@ class DataProcessor:
                         retsol+=[i]
             if j==len(sol):
                 return retsol
+            if word[-1]=='的':
+                word=word[:-1]
+                best_split = None
+                max_right_len = 0
+
+                for i in range(len(word) - 1, 0, -1):
+                    right_part = word[i:]
+                    if DataProcessor.find_best_match(right_part, None, lexicon):
+                        left_part = word[:i]
+                        if DataProcessor.find_best_match(left_part, None, lexicon):
+                            # 更新最长 right_part 的切分点
+                            if len(right_part) > max_right_len:
+                                best_split = (left_part, right_part)
+                                max_right_len = len(right_part)
+
+                if best_split:
+                    return [best_split[0], '小隔', best_split[1],'的']
+                            # return [left_part] + ['小隔'] + [right_part]+['小隔']+['的']
+                        # return DataProcessor.split_word(left_part, lexicon) + [right_part]
+
+                for i in range(1, len(word)):
+                    right_part = word[i:]
+                    if DataProcessor.find_best_match(right_part, None, lexicon):
+                        left_part = word[:i]
+                        if DataProcessor.find_best_match(left_part, None, lexicon):
+                            return [left_part] + ['小隔'] + [right_part]+['小隔']+['的']
+                        # return DataProcessor.split_word(left_part, lexicon) +['小隔'] + [right_part]
+
             # 从右向左寻找最长匹配
-            for i in range(len(word)-1, 0, -1):
+            best_split = None
+            max_right_len = 0
+
+            for i in range(len(word) - 1, 0, -1):
                 right_part = word[i:]
-                if DataProcessor.find_best_match(right_part,None, lexicon) :
+                if DataProcessor.find_best_match(right_part, None, lexicon):
                     left_part = word[:i]
-                    if DataProcessor.find_best_match(left_part,None, lexicon):
-                        return [left_part]+['小隔']  + [right_part]
+                    if DataProcessor.find_best_match(left_part, None, lexicon):
+                        # 更新最长 right_part 的切分点
+                        if len(right_part) > max_right_len:
+                            best_split = (left_part, right_part)
+                            max_right_len = len(right_part)
+
+            if best_split:
+                return [best_split[0], '小隔', best_split[1]]
                     # return DataProcessor.split_word(left_part, lexicon) + [right_part]
 
             for i in range(1, len(word)):
@@ -244,7 +281,7 @@ class DataProcessor:
             images = []
 
             for part in split_parts:
-                sub_entry = DataProcessor.find_best_match(part,pos, lexicon)
+                sub_entry = DataProcessor.find_best_match(part,None, lexicon)
                 if sub_entry:
                     logging.debug(f"子词匹配成功 | 子词：{part} → 词条ID：{sub_entry.get('id')}")
 

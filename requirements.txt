@@ -1,0 +1,9 @@
+pandas
+numpy
+pillow
+matplotlib 
+Flask 
+fastapi
+uvicorn
+jinja2 
+python-multipart

@@ -258,25 +258,29 @@ class PaginationManager:
                         text_frame.pack_propagate(False)
                         text_frame.pack(fill='both', expand=True)
 
+                        def is_all_spaces(val):
+                            if isinstance(val, str):  # 判断是否为字符串
+                                return val != "" and val.isspace()  # 判断非空且全是空格字符
+                            return False  # 不是字符串直接返回 False
                         # 清除之前的部件
                         for widget in text_frame.winfo_children():
                             widget.destroy()
                         try :
-                            if entry['english'] =='' or  'nan' in entry['english']:
+                            if entry['english'] =='' or is_all_spaces(entry['english']) or 'nan' in entry['english']:
                                 entry['english']= createRequest(entry['text'], 'zh', 'en')[0]
-                            if (entry['jp_text'] =='' or  'nan' in entry['jp_text'])  and UIManager.current_lang == 'jp' :
+                            if (entry['jp_text'] =='' or is_all_spaces(entry['jp_text']) or 'nan' in entry['jp_text'])  and UIManager.current_lang == 'jp' :
                                 entry['jp_text']= createRequest(entry['china'], 'zh', 'jp')[0]
-                            if (entry['ara_text'] =='' or  'nan' in entry['ara_text'])  and UIManager.current_lang == 'ara' :
+                            if (entry['ara_text'] =='' or is_all_spaces(entry['ara_text']) or 'nan' in entry['ara_text'])  and UIManager.current_lang == 'ara' :
                                 entry['ara_text']= createRequest(entry['china'], 'zh', 'ara')[0]
-                            if (entry['fr_text'] ==''  or  'nan' in entry['fr_text']) and UIManager.current_lang == 'fr' :
+                            if (entry['fr_text'] ==''  or is_all_spaces(entry['fr_text']) or 'nan' in entry['fr_text']) and UIManager.current_lang == 'fr' :
                                 entry['fr_text']= createRequest(entry['china'], 'zh', 'fr')[0]
-                            if (entry['de_text'] ==''  or  'nan' in entry['de_text']) and UIManager.current_lang == 'de' :
+                            if (entry['de_text'] ==''  or is_all_spaces(entry['de_text']) or 'nan' in entry['de_text']) and UIManager.current_lang == 'de' :
                                 entry['de_text']= createRequest(entry['china'], 'zh', 'de')[0]
-                            if (entry['pt_text'] =='' or  'nan' in entry['pt_text'])  and UIManager.current_lang == 'pt' :
+                            if (entry['pt_text'] =='' or is_all_spaces(entry['pt_text']) or 'nan' in entry['pt_text'])  and UIManager.current_lang == 'pt' :
                                 entry['pt_text']= createRequest(entry['china'], 'zh', 'pt')[0]
-                            if (entry['spa_text'] == '' or  'nan' in entry['spa_text'])  and UIManager.current_lang == 'spa' :
+                            if (entry['spa_text'] == '' or is_all_spaces(entry['spa_text']) or 'nan' in entry['spa_text'])  and UIManager.current_lang == 'spa' :
                                 entry['spa_text']= createRequest(entry['china'], 'zh', 'spa')[0]
-                            if (entry['ru_text'] == '' or  'nan' in entry['ru_text'])  and UIManager.current_lang == 'ru' :
+                            if (entry['ru_text'] == '' or is_all_spaces(entry['ru_text']) or 'nan' in entry['ru_text'])  and UIManager.current_lang == 'ru' :
                                 entry['ru_text']= createRequest(entry['china'], 'zh', 'ru')[0]
                         except Exception as e:
                             logging.error(e)

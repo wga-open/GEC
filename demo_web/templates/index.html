@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图母转换 Demo</title>
+    <style>
+        body { font-family: '微软雅黑', Arial, sans-serif; background: #f8f9fa; }
+        .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #eee; padding: 32px; }
+        .input-area { margin-bottom: 24px; }
+        .card-row { display: flex; align-items: flex-start; }
+        .card { text-align: center; margin: 0 10px; border: 1px solid #eee; border-radius: 8px; padding: 10px; min-width: 120px; background: #fafbfc; }
+        .card img { max-width: 100px; max-height: 100px; display: block; margin: 0 auto; }
+        .no-img { width: 100px; height: 100px; line-height: 100px; background: #eee; color: #aaa; display: block; margin: 0 auto; border-radius: 4px; }
+        .card-char { margin-top: 8px; font-size: 1.2em; }
+        .card-explain { font-size: 0.9em; color: #555; margin-top: 4px; }
+        .divider { font-size: 2em; color: #888; margin: 0 8px; align-self: center; }
+        label { font-weight: bold; }
+        .btn { padding: 8px 24px; font-size: 1em; border-radius: 4px; border: none; background: #007bff; color: #fff; cursor: pointer; }
+        .btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="post">
+        <div class="input-area">
+            <label for="input_text">文本：</label><br>
+            <input type="text" id="input_text" name="input_text" value="{{ input_text }}" style="width: 70%; padding: 6px; font-size: 1em;">
+            <button class="btn" type="submit">开始转换</button>
+        </div>
+    </form>
+    {% if cards %}
+    <div class="card-row">
+        {% for card in cards %}
+            <div class="card">
+                {% if card.img_url %}
+                    <img src="{{ card.img_url }}">
+                {% else %}
+                    <div class="no-img">无图</div>
+                {% endif %}
+                <div class="card-char">{{ card.char }}</div>
+                <div class="card-explain">{{ card.explain }}</div>
+            </div>
+            {% if not loop.last %}
+                <div class="divider">|</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+</body>
+</html> 

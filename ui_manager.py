@@ -184,8 +184,20 @@ class UIManager:
         label.pack(pady=10)
 
         # 文本输入框
-        text_input = tk.Text(main_frame, height=12, width=90, font=font_spec)
+        text_input = tk.Text(main_frame, height=12, width=90, font=font_spec, undo=True, autoseparators=True,
+                             maxundo=-1)
         text_input.pack(pady=10)
+
+        # 右键菜单
+        right_click_menu = tk.Menu(text_input, tearoff=0)
+        right_click_menu.add_command(label="Paste", command=lambda: text_input.event_generate("<<Paste>>"))
+        right_click_menu.add_command(label="Copy", command=lambda: text_input.event_generate("<<Copy>>"))
+        right_click_menu.add_command(label="Cut", command=lambda: text_input.event_generate("<<Cut>>"))
+
+        def show_context_menu(event):
+            right_click_menu.tk_popup(event.x_root, event.y_root)
+
+        text_input.bind("<Button-3>", show_context_menu)
 
         # 开始按钮
         ttk.Button(
