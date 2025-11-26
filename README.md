@@ -1,47 +1,47 @@
-# World Graphic Alphabet (WGA)
-WGA is a graphic symbol system designed globally. It enables cross - language communication and assists foreign - language reading without prior learning.
+# World Graphic Alphabet (GEC)
+GEC is a graphic symbol system designed globally. It enables cross - language communication and assists foreign - language reading without prior learning.
 
-[![中文文档](https://img.shields.io/badge/文档-中文版-important)](README_zh.md) [![Project Status: Active](https://img.shields.io/badge/status-active-brightgreen.svg)]() [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/World-Graphic-Alphabet-WGA)
+[![中文文档](https://img.shields.io/badge/文档-中文版-important)](README_zh.md) [![Project Status: Active](https://img.shields.io/badge/status-active-brightgreen.svg)]() [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/World-Graphic-Alphabet-GEC)
 
 ## Project Introduction
-WGA has 600+. Each corresponds to a basic meaning; other meanings are expressed through combinations of multiple WGAs. For example:
+GEC has 600+. Each corresponds to a basic meaning; other meanings are expressed through combinations of multiple GECs. For example:
 *  Platform+Sleep → Bed   (core word on the left)
 *  Grass+close+bug → Flytrap  (Even for region-specific plant, global users instantly grasp its category (grass) and key trait (traps bugs)).
 ![1.png](./src/exp.png)
 
 
-The WGA reader intelligently matches WGAs above the text, allowing annotations to be viewed via mouse. Without prior learning, it can achieve bidirectional auxiliary understanding of text and WGAs. Applicable to:
+The GEC reader intelligently matches GECs above the text, allowing annotations to be viewed via mouse. Without prior learning, it can achieve bidirectional auxiliary understanding of text and GECs. Applicable to:
 * Reading foreign languages ★
 * Reading ancient texts and technical terms
 * Children's literacy
 * Communication for the hearing impaired
-![2.png](./src/text%20and%20WGAs%20display%20side%20-%20by%20-%20side.png)
+![2.png](./src/text%20and%20GECs%20display%20side%20-%20by%20-%20side.png)
 
 ## Core Advantage 1: Flexibility and Freedom
 Graphics offer immense variability, ensuring high flexibility
 1. Open design, continuous evolution
-Unlike language pronunciation, WGA shape don't restrict each other. So anyone's ideas (shapes, word combinations, rules, etc.) can be discovered and promoted by the community.
+Unlike language pronunciation, GEC shape don't restrict each other. So anyone's ideas (shapes, word combinations, rules, etc.) can be discovered and promoted by the community.
 2. Flexible layout
-* Text-aligned layout (implemented): see WGA reader. 
+* Text-aligned layout (implemented): see GEC reader. 
 * 2D layout (In Development): Logic-based layout breaks word order constraints, enabling instant page perception and parallel thinking.
 ![3.png](./src/2D%20Layout%20Example.png)
 
 ## Core Advantage 2: Simple and Efficient 
-Semantic decomposition makes WGAs concise, universal, abstract, and unambiguous.
+Semantic decomposition makes GECs concise, universal, abstract, and unambiguous.
 1. Precise expression
 Example: "舅舅"  as "uncle" is imprecise; "Brother + Mother" is exact.
 2. Easy to understand
-even for unfamiliar words, you can understand their categories and main characteristics via WGAs combinations.
+even for unfamiliar words, you can understand their categories and main characteristics via GECs combinations.
 3. Concise & Memorable
 With only 600+, the shape can be simplified. 
 ① Easy to identify: small shape, faster reading
-![4.png](./src/Comparison%20between%20the%20original%20image%20and%20WGA.png)
-② Associative memory: Thanks to its simple shape, WGAs of the same type are more similar.
+![4.png](./src/Comparison%20between%20the%20original%20image%20and%20GEC.png)
+② Associative memory: Thanks to its simple shape, GECs of the same type are more similar.
 ![5.png](./src/图母关联之父母英文.png)
 ![6.png](./src/图母关联之元素表英文.png)
 
 4. Simple & Fast Input
-Input via categorized WGA search. Operable even by children. Average keystrokes < 20% of typing English.
+Input via categorized GEC search. Operable even by children. Average keystrokes < 20% of typing English.
 Example (enter "mother"): Long press "person" → display secondary words → click "mother" with another finger. (Or long press "Mother" → display third level words and associated words)
 ## Core advantage 3: huge potential
 For hundreds of thousands of years, the speed of human speech has hardly changed, and technological progress has made graphics have unlimited potential.
@@ -100,7 +100,7 @@ Here's the English translation of your document in Markdown format:
 
 ## Installation Instructions
 ### Method 1
-Download pre-compiled executable files directly from releases, no Python environment required. [link](https://github.com/wga-open/-World-Graphic-Alphabet-WGA-/releases/download/v1.0.0/MyApp-1.0-win64.msi)
+Download pre-compiled executable files directly from releases, no Python environment required. [link](https://github.com/GEC-open/-World-Graphic-Alphabet-GEC-/releases/download/v1.0.0/MyApp-1.0-win64.msi)
 
 ### Method 2
 Install from source code
@@ -140,41 +140,41 @@ Install from source code
    - Translation is processed in real-time
 
 
-## Quick Start: Using WGA Reader
+## Quick Start: Using GEC Reader
 
 Usage:
-Select your native language (top right) → Enter or paste any - language text in the input box → Click "Start parsing". Then, the text and WGAs display side - by - side in seconds.
+Select your native language (top right) → Enter or paste any - language text in the input box → Click "Start parsing". Then, the text and GECs display side - by - side in seconds.
 Query function: 
  Hover over a word: Shows its annotation.
- Hover over a WGA: Shows its meaning and design rationale.
+ Hover over a GEC: Shows its meaning and design rationale.
 Usage suggestion: 
-Beginners: Focus on text, peripherally perceiving WGAs to build associations.
-Advanced Users: Use the "X%" button to mask the lower half of the text, shifting focus to WGAs for graphic thinking training.
+Beginners: Focus on text, peripherally perceiving GECs to build associations.
+Advanced Users: Use the "X%" button to mask the lower half of the text, shifting focus to GECs for graphic thinking training.
 
 ## Contribution Guide
-The WGA project is crucial for human peace and development and urgently requires global collaboration. We invite enthusiasts in the following areas:
+The GEC project is crucial for human peace and development and urgently requires global collaboration. We invite enthusiasts in the following areas:
 
 ### 1. program development
- ① Optimize WGA Reader: Enhance parsing speed, accuracy, UX. [link](doc/图母阅读器修改需求.md)
-② Develop WGA Platform & Input Methods (Keyboard/Touch). [Requirements Doc](doc/图母平台与输入法.docx)
-③ Build Browser Extensions for web page WGA display (Next Phase).
+ ① Optimize GEC Reader: Enhance parsing speed, accuracy, UX. [link](doc/图母阅读器修改需求.md)
+② Develop GEC Platform & Input Methods (Keyboard/Touch). [Requirements Doc](doc/图母平台与输入法.docx)
+③ Build Browser Extensions for web page GEC display (Next Phase).
 ④ Explore 2D layout (Discussion Stage)
-### 2. WGA shape design 
-Design more intuitive, memorable, and recognizable shapes for the 600+ WGAs.Single WGA submissions are accepted. [Download Existing WGA](src/TU(1).rar)
+### 2. GEC shape design 
+Design more intuitive, memorable, and recognizable shapes for the 600+ GECs.Single GEC submissions are accepted. [Download Existing GEC](src/TU(1).rar)
 ### 3. Phrase design (Need lovers from all languages and fields.)
-Create concise, easy-to-understand, unambiguous WGAs combinations for tens of thousands of words.  Submit solutions for individual words.  [Word Bank Decomposition Table](src/WGA-word.xlsx)  
+Create concise, easy-to-understand, unambiguous GECs combinations for tens of thousands of words.  Submit solutions for individual words.  [Word Bank Decomposition Table](src/GEC-word.xlsx)  
 ### 4. Other Contributions
 *   Translation
 *   Grammar Design
-*   WGA Set Expansion/Reduction
+*   GEC Set Expansion/Reduction
 *   2D layout Design
 *   Experimental Proposals
 *   Community Governance
 We welcome your suggestions and participation!
 
 ## Contact & Feedback
-* Community Discussion: [link](https://github.com/World-Graphic-Alphabet-WGA)
-* Email: wga.open@gmail.com
+* Community Discussion: [link](https://github.com/World-Graphic-Alphabet-GEC)
+* Email: GEC.open@gmail.com
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file in the project root for details.
